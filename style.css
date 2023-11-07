@@ -5,12 +5,14 @@
 }
 
 nav {
-    background-color: #fff3ea;
+    background-color: #fff1e5;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 3px 3px 5px rgb(170, 170, 170);
-    position: static;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 #left-nav {
@@ -26,7 +28,7 @@ nav {
 #left-nav p {
     padding-top: 20px;
     font-size: 40px;
-    font-family: 'Kaisei Tokumin', serif;
+    font-family: 'Roboto Slab', serif;
     color: #bf6700;
     font-weight: 800;
 }
@@ -117,7 +119,7 @@ a {
 }
 
 #search-align {
-    margin-top: 60px ;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
 }
@@ -146,19 +148,19 @@ a {
     justify-content: flex-end;
 }
 
-#input{
+#search-input {
     width: 230px;
     border-radius: 20px 0 0 20px;
     border: none;
     border: 1px solid black;
     font-family: 'Roboto Slab', serif;
-    font-size: 22px;
+    font-size: 25px;
     padding: 10px;
     font-family: 600;
     text-align: center;
 }
 
-#search-icon{
+#search-icon {
     height: 50px;
     width: 70px;
     background-color: #dddddd;
@@ -167,9 +169,10 @@ a {
     align-items: center;
     border-radius: 0 20px 20px 0;
     border: 1px solid #000000;
+    cursor: pointer;
 }
 
-#search-icon img{
+#search-icon img {
     height: 30px;
 }
 
@@ -185,4 +188,160 @@ a {
     justify-content: center;
     text-shadow: 1px 2px 2px gray;
     color: #424242;
+}
+
+#random-image {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#random-image img {
+    height: 400px;
+    width: 600px;
+    border-radius: 20px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+#random-name {
+    padding-top: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+}
+
+#ingredients {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#ingredients-align {
+    display: none;
+    border: 3px solid black;
+    justify-content: center;
+    position: fixed;
+    top: 170px;
+    left: 27%;
+    right: 27%;
+    z-index: 1;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #ffcb91, #ffffff);
+    box-shadow: 5px 8px 5px black;
+    border-radius: 20px;
+}
+
+#ingredients p {
+    text-decoration: underline;
+    margin-top: 20px;
+    font-size: 40px;
+    font-family:'Roboto Serif', serif;
+    font-weight: 700;
+    color: #923500;
+}
+
+#ingredients-list {
+    padding: 20px;
+    height: 400px;
+    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Roboto Serif', serif;
+    color: black;
+}
+
+#close {
+    border-radius: 2px;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background-color: white;
+    color: red;
+    border: 2px solid black;
+    font-weight: 900;
+    height: 25px;
+    width: 30px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#close:hover {
+    scale: 1.4;
+}
+
+#results {
+    display: none;
+    margin-top: 70px;
+    font-size: 28px;
+    padding-left: 50px;
+    font-weight: 500;
+}
+
+#mealGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 250px);
+    grid-template-rows: repeat(autofill, 270px);
+    gap: 30px;
+    margin: 25px;
+    align-content: center;
+    justify-content: center;
+}
+
+#mealGrid div {
+    background-color: #fffafa;
+    height: 270px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-radius: 0px 30px 0px 30px;
+    border: 1px solid rgb(200, 123, 0);
+}
+
+#mealGrid div:hover {
+    scale: 1.1;
+    border: 2px solid rgb(200, 123, 0);
+    box-shadow: 5px 3px 3px  #ab7d009b;
+}
+
+#mealGrid div img {
+    padding: 20px;
+    height: 220px;
+    width: 250px;
+    border-radius: 35px;
+}
+
+#mealGrid div p {
+    text-align: center;
+}
+
+#credits {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 100px 30px 100px;
+}
+
+.name {
+    display: flex;
+    align-items: end;
+}
+
+.keyword {
+    font-size: 18px;
+}
+
+.keyvalue {
+    font-size: 22px;
+    padding-left: 5px;
+    font-weight: 600;
 }
