@@ -134,9 +134,13 @@ a {
     justify-content: space-evenly;
 }
 
-#search-container p {
+#desktop {
     font-size: 20px;
     font-weight: 600;
+}
+
+#mobile {
+    display: none;
 }
 
 #search-box {
@@ -238,7 +242,7 @@ a {
     text-decoration: underline;
     margin-top: 20px;
     font-size: 40px;
-    font-family:'Roboto Serif', serif;
+    font-family: 'Roboto Serif', serif;
     font-weight: 700;
     color: #923500;
 }
@@ -257,7 +261,7 @@ a {
 }
 
 #close {
-    border-radius: 2px;
+    border-radius: 5px;
     cursor: pointer;
     position: absolute;
     top: 25px;
@@ -267,7 +271,7 @@ a {
     border: 2px solid black;
     font-weight: 900;
     height: 25px;
-    width: 30px;
+    width: 35px;
     font-size: 30px;
     display: flex;
     justify-content: center;
@@ -283,7 +287,8 @@ a {
     margin-top: 70px;
     font-size: 28px;
     padding-left: 50px;
-    font-weight: 500;
+    font-weight: 600;
+    text-decoration: underline;
 }
 
 #mealGrid {
@@ -305,13 +310,14 @@ a {
     justify-content: start;
     align-items: center;
     border-radius: 0px 30px 0px 30px;
+    cursor: pointer;
     border: 1px solid rgb(200, 123, 0);
 }
 
 #mealGrid div:hover {
     scale: 1.1;
     border: 2px solid rgb(200, 123, 0);
-    box-shadow: 5px 3px 3px  #ab7d009b;
+    box-shadow: 5px 3px 3px #ab7d009b;
 }
 
 #mealGrid div img {
@@ -344,4 +350,236 @@ a {
     font-size: 22px;
     padding-left: 5px;
     font-weight: 600;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-button {
+
+    background-color: rgb(255, 242, 215);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ffbb6d;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #ffeade;
+}
+
+
+
+#ingredients-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#ingredients-list::-webkit-scrollbar-button {
+
+    background-color: #ffdac4;
+}
+
+#ingredients-list::-webkit-scrollbar-thumb {
+    background-color: #ffbb6d;
+}
+
+#ingredients-list::-webkit-scrollbar-track {
+    background-color: #ffceb1;
+}
+
+
+
+
+/* mobile responsive */
+@media (max-width: 768px) {
+
+    nav {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #left-nav p {
+        font-size: 30px;
+    }
+
+    #left-nav {
+        padding-top: 10px;
+        display: flex;
+        justify-content: start;
+    }
+
+    #right-nav {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #right-nav div {
+        font-size: 16px;
+        padding: 0 8px 0 8px;
+        height: 25px;
+        margin: 20px 15px 10px 0;
+    }
+
+    #right-nav img {
+        height: 37px;
+        margin: 0;
+        margin-left: 5%;
+    }
+
+    #welcome {
+        margin-top: 30px;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    #explore {
+        margin-top: 0;
+        font-size: 13px;
+        padding: 15px;
+
+    }
+
+    #explore p {
+        line-height: 20px;
+    }
+
+    #cooking {
+        font-size: 16px;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    #cooking p {
+        text-align: center;
+        padding: 12px;
+    }
+
+    #search-container {
+        width: 85%;
+        height: 60px;
+        display: flex;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #desktop {
+        display: none;
+    }
+
+    #mobile {
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    #search-align {
+        margin-top: 20px;
+    }
+
+    #search-box {
+        height: 30px;
+        width: 120px;
+    }
+
+    #search-input {
+        width: 120px;
+        font-size: 18px;
+    }
+
+    #search-icon {
+        height: 30px;
+        width: 40px;
+    }
+
+    #search-icon img {
+        height: 20px;
+    }
+
+    #begin {
+        margin-top: 60px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #random-image {
+        margin-top: 15px;
+    }
+
+    #random-image img {
+        height: 200px;
+        width: 300px;
+    }
+
+    #random-name {
+        font-size: 16px;
+        padding-top: 2px;
+    }
+
+    #results {
+        font-size: 22px;
+        padding-left: 10px;
+        margin-top: 60px;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+    #mealGrid {
+        grid-template-columns: repeat(1, 250px);
+        grid-template-rows: repeat(autofill, 270px);
+        grid-row-gap: 50px;
+    }
+
+    #mealGrid div {
+        width: 100%;
+        margin: 0;
+    }
+
+    .meal-item:hover {
+        transform: scale(1.05);
+    }
+
+    #credits {
+        padding: 50px 0 20px 15px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .name {
+        padding-top: 5px;
+    }
+
+    .keyword {
+        font-size: 16px;
+    }
+
+    .keyvalue {
+        font-size: 18px;
+    }
+
+    #ingredients-align {
+        position: fixed;
+        top: 170px;
+        left: 17%;
+        right: 17%;
+    }
+
+    #ingredients p {
+        margin-top: 70px;
+    }
+
+    #close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        border-radius: 5px;
+        width: 35px;
+    }
+
 }

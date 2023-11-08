@@ -1,4 +1,7 @@
-let p = fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+
+//variables declaration
+
+let randomAPI = fetch("https://www.themealdb.com/api/json/v1/1/random.php")
 var randomImage = document.getElementById("random-image")
 var randomName = document.getElementById("random-name")
 var ingredientsDiv = document.getElementById("ingredients-list")
@@ -11,7 +14,9 @@ const mealGrid = document.getElementById("mealGrid");
 
 
 
-p.then((response) => {
+//get random image api
+
+randomAPI.then((response) => {
     if (response.ok) {
         return response.json();
     } else {
@@ -42,6 +47,9 @@ p.then((response) => {
 
 
 
+
+//get ingredients of recepies
+
 function displayIngredients(mealName) {
 
     ingredientsDiv.innerHTML = ""
@@ -61,6 +69,7 @@ function displayIngredients(mealName) {
             const meal = data.meals[0];
             if (meal) {
                 // Extract and display all ingredients
+                console.log(meal)
 
                 for (let i = 1; i <= 20; i++) {
                     const ingredient = meal[`strIngredient${i}`];
@@ -93,6 +102,7 @@ closeButton.addEventListener('click', () => {
 
 
 
+//search recipies with categories api
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -112,6 +122,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("Error fetching data: " + error);
             });
     });
+
+
+    //get the category meals on dom inside grid 
 
     function displayMeals(meals) {
         mealGrid.innerHTML = "";
@@ -133,11 +146,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 mealGrid.appendChild(mealItem);
             });
         } else {
-            mealGrid.innerHTML = '<p style="font-size: 30px; width:30vw; font-weight: 800;"> No recepies found in this category! </p>';
+            mealGrid.innerHTML = '<p style="font-size: 20px; width:80vw; font-weight: 800; text-align: center; padding-right: 20px;"> No recepies found in this category! </p>';
         }
     }
 });
 
+
+
+
+//enabled enter key function to get results and display in grid (copy of above function)
 
 searchInput.addEventListener('keydown', function (event) {
     if (event.key === 'Enter' || event.keyCode === 13) {
@@ -188,7 +205,7 @@ searchInput.addEventListener('keydown', function (event) {
                     mealGrid.appendChild(mealItem);
                 });
             } else {
-                mealGrid.innerHTML = '<p style="font-size: 30px; width:30vw; font-weight: 800;"> No recepies found in this category! </p>';
+                mealGrid.innerHTML = '<p style="font-size: 20px; width:80vw; font-weight: 800; text-align: center; padding-right: 20px;"> No recepies found in this category! </p>';
             }
         }
 
