@@ -69,7 +69,6 @@ function displayIngredients(mealName) {
             const meal = data.meals[0];
             if (meal) {
                 // Extract and display all ingredients
-                console.log(meal)
 
                 for (let i = 1; i <= 20; i++) {
                     const ingredient = meal[`strIngredient${i}`];
